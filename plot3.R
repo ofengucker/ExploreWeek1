@@ -29,11 +29,12 @@ y2 <- tabProj$Sub_metering_2
 y3 <- tabProj$Sub_metering_3
 x <- tabProj$datetime
 
+png(filename="plot3.png", width=480, height=480, units="px")
+
 plot(x,y1, type = "n",ylab = "Energy sub metering", xlab = NA,ylim=c(0,max(y1)), cex.axis = 0.9, cex.lab = 0.9)
 lines(x,y1, type="l")
 lines( x, y2, type="l", col="red" )
 lines( x, y3, type="l", col="blue")
 legend("topright", lty = 1, col = c("black", "red", "blue"),legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
-dev.copy(png,"plot3.png", width=480, height=480)
 dev.off()
